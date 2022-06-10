@@ -9,6 +9,8 @@ namespace UserAccountGroupManagement.Test
         [TestMethod]
         public void TestMethod1()
         {
+            bool result = false;
+            Assert.AreEqual(false, result);
         }
     }
 }
