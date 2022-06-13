@@ -1,0 +1,17 @@
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.Repository.dll.config
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.Repository.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.Repository.pdb
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.DAL.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.Error.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.Model.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.Util.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.DAL.pdb
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.DAL.dll.config
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.Error.pdb
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.Model.pdb
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\bin\Debug\UserAccountGroupManagement.Util.pdb
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\obj\Debug\UserAccountGroupManagement.Repository.csprojAssemblyReference.cache
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\obj\Debug\UserAccountGroupManagement.Repository.csproj.CoreCompileInputs.cache
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\obj\Debug\UserAccountGroupManagement.Repository.csproj.CopyComplete
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\obj\Debug\UserAccountGroupManagement.Repository.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Repository\obj\Debug\UserAccountGroupManagement.Repository.pdb

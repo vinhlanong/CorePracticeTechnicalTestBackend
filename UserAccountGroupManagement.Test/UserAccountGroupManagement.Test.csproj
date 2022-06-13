@@ -49,11 +49,34 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UserGroupTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UserAccountGroupManagement.DAL\UserAccountGroupManagement.DAL.csproj">
+      <Project>{7cbc408f-0ea1-4415-bc7c-8f15cb52ed98}</Project>
+      <Name>UserAccountGroupManagement.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserAccountGroupManagement.Error\UserAccountGroupManagement.Error.csproj">
+      <Project>{26eae10e-2b6f-4da3-bcc6-1051c59f0a26}</Project>
+      <Name>UserAccountGroupManagement.Error</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserAccountGroupManagement.Model\UserAccountGroupManagement.Model.csproj">
+      <Project>{444c9f5d-a219-4610-ac26-196dd8b220ac}</Project>
+      <Name>UserAccountGroupManagement.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserAccountGroupManagement.Repository\UserAccountGroupManagement.Repository.csproj">
+      <Project>{b062d7c9-9c0e-4e04-b0ee-72e1c0bb274c}</Project>
+      <Name>UserAccountGroupManagement.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserAccountGroupManagement.Util\UserAccountGroupManagement.Util.csproj">
+      <Project>{7371ed88-eee0-4af0-a935-b4071a167a42}</Project>
+      <Name>UserAccountGroupManagement.Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

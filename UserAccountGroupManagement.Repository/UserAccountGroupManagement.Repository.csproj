@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>b062d7c9-9c0e-4e04-b0ee-72e1c0bb274c</ProjectGuid>
+    <ProjectGuid>{B062D7C9-9C0E-4E04-B0EE-72E1C0BB274C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UserAccountGroupManagement.Repository</RootNamespace>
@@ -31,24 +31,40 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="GroupReopistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UserAccountGroupManagement.DAL\UserAccountGroupManagement.DAL.csproj">
+      <Project>{7cbc408f-0ea1-4415-bc7c-8f15cb52ed98}</Project>
+      <Name>UserAccountGroupManagement.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserAccountGroupManagement.Error\UserAccountGroupManagement.Error.csproj">
+      <Project>{26eae10e-2b6f-4da3-bcc6-1051c59f0a26}</Project>
+      <Name>UserAccountGroupManagement.Error</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserAccountGroupManagement.Model\UserAccountGroupManagement.Model.csproj">
+      <Project>{444c9f5d-a219-4610-ac26-196dd8b220ac}</Project>
+      <Name>UserAccountGroupManagement.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserAccountGroupManagement.Util\UserAccountGroupManagement.Util.csproj">
+      <Project>{7371ed88-eee0-4af0-a935-b4071a167a42}</Project>
+      <Name>UserAccountGroupManagement.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

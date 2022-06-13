@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UserAccountGroupManagement" Class="GroupDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=dev2;Initial Catalog=UserAccountGroupManagement;User ID=dev" SettingsObjectName="UserAccountGroupManagement.DAL.Properties.Settings" SettingsPropertyName="UserAccountGroupManagementConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.st_userGroup_insert" Method="st_userGroup_insert">
+    <Parameter Name="id" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="group_name" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="created" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="error_num" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.st_userGroupAll_select" Method="st_userGroupAll_select">
+    <ElementType Name="st_userGroupAll_selectResult">
+      <Column Name="id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="group_name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_userGroup_update" Method="st_userGroup_update">
+    <Parameter Name="id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="group_name" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="description" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="modified" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="error_num" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.st_userGroup_delete" Method="st_userGroup_delete">
+    <Parameter Name="id" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="error_num" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

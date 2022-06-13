@@ -1,0 +1,6 @@
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\bin\Debug\UserAccountGroupManagement.DAL.dll.config
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\bin\Debug\UserAccountGroupManagement.DAL.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\bin\Debug\UserAccountGroupManagement.DAL.pdb
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\obj\Debug\UserAccountGroupManagement.DAL.csproj.CoreCompileInputs.cache
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\obj\Debug\UserAccountGroupManagement.DAL.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\obj\Debug\UserAccountGroupManagement.DAL.pdb

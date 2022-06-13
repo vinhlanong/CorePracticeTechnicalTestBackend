@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace UserAccountGroupManagement.Error
 {
-    public class Class1
+    public enum GroupError
     {
+        GroupNameNullOrEmptyError = 1000
+        , InvalidIDError = 1001
     }
 }

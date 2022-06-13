@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UserAccountGroupManagement.Repository
+namespace UserAccountGroupManagement.Error
 {
-    public class Class1
+    public enum CommonError
     {
+        UnexpectError = 0999
     }
 }

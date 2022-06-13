@@ -1,0 +1,5 @@
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Util\bin\Debug\UserAccountGroupManagement.Util.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Util\bin\Debug\UserAccountGroupManagement.Util.pdb
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Util\obj\Debug\UserAccountGroupManagement.Util.csproj.CoreCompileInputs.cache
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Util\obj\Debug\UserAccountGroupManagement.Util.dll
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Util\obj\Debug\UserAccountGroupManagement.Util.pdb
