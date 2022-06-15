@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
+using System.Xml.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UserAccountGroupManagement.DAL;
@@ -192,6 +193,22 @@ namespace UserAccountGroupManagement.Repository
             }
 
             return lsResult;
+        }
+
+        public XElement GroupIDsToXML(List<Group> lsResult)
+        {
+            XElement result = null;
+
+            if (lsResult != null && lsResult.Count > 0)
+            {
+                result = new XElement("root", from r in lsResult
+                                              select new XElement("rec",
+                                                                         new XElement("ID", r.ID)
+                                                                 )
+                          );
+            }
+
+            return result;
         }
     }
 }

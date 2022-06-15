@@ -23,6 +23,5 @@ namespace UserAccountGroupManagement.Model
         public short ID { get; set; }
         public string Name { get; set; }
         public string Desc { get; set; }
-
     }
 }

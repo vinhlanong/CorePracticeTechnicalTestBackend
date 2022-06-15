@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="UserGroupTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -80,7 +80,7 @@ namespace UserAccountGroupManagement.Test
 
             GroupReopistory gr = new GroupReopistory();
             Group g = new Group();
-            g.ID = 4;
+            g.ID = 1;
             g.Name = "Staff1";
             g.Desc = "Staff Group1";
             gr.TheGroup = g;
