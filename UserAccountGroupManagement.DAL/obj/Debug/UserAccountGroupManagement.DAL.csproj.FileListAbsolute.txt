@@ -4,3 +4,4 @@ C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBack
 C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\obj\Debug\UserAccountGroupManagement.DAL.csproj.CoreCompileInputs.cache
 C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\obj\Debug\UserAccountGroupManagement.DAL.dll
 C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\obj\Debug\UserAccountGroupManagement.DAL.pdb
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.DAL\obj\Debug\UserAccountGroupManagement.DAL.csprojAssemblyReference.cache
