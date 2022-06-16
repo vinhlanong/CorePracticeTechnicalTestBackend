@@ -24,6 +24,9 @@ namespace UserAccountGroupManagement.Error
         , LoginNameNullOrEmptyError = 2003
         , PasswordNullOrEmptyError = 2004
         , UserGroupEmptyError = 2005
+        , InvalidUserIDError = 2006
+        , InvalidUserAccountIDError = 2007
+        , PasswordNotStrongError = 2008
 
     }
 }

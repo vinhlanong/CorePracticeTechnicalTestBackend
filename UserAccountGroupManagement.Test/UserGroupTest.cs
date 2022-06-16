@@ -10,7 +10,7 @@ namespace UserAccountGroupManagement.Test
     public class UserGroupTest
     {
         [TestMethod]
-        public void TestInsertGroup()
+        public void Test_1000_InsertGroup()
         {
             bool result = false;
 
@@ -26,23 +26,7 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void TestInsertGroupDuplicateGroup()
-        {
-            bool result = false;
-
-            GroupReopistory gr = new GroupReopistory();
-            Group g = new Group();
-            g.Name = "Administrator";
-            g.Desc = "Administrator Group";
-            gr.TheGroup = g;
-
-            result = gr.InsertGroup();
-
-            Assert.AreEqual(true, result);
-        }
-
-        [TestMethod]
-        public void TestInsertAnotherGroup()
+        public void Test_1001_InsertAnotherGroup()
         {
             bool result = false;
 
@@ -58,7 +42,42 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void TestInsertGroupEmptyGroupName()
+        public void Test_1002_InsertAnotherGroup()
+        {
+            bool result = false;
+
+            GroupReopistory gr = new GroupReopistory();
+            Group g = new Group();
+            g.Name = "Delivery Team";
+            g.Desc = "Delivery Team";
+            gr.TheGroup = g;
+
+            result = gr.InsertGroup();
+
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void Test_1003_InsertGroupDuplicateGroup()
+        {
+            bool result = false;
+
+            GroupReopistory gr = new GroupReopistory();
+            Group g = new Group();
+            g.Name = "Administrator";
+            g.Desc = "Administrator Group";
+            gr.TheGroup = g;
+
+            result = gr.InsertGroup();
+
+            Assert.AreEqual(true, result);
+        }
+
+
+
+
+        [TestMethod]
+        public void Test_1004_InsertGroupEmptyGroupName()
         {
             bool result = false;
 
@@ -73,14 +92,15 @@ namespace UserAccountGroupManagement.Test
             Assert.AreEqual(false, result);
         }
 
+
         [TestMethod]
-        public void TestUpdateGroup()
+        public void Test_1005_UpdateGroup()
         {
             bool result = false;
 
             GroupReopistory gr = new GroupReopistory();
             Group g = new Group();
-            g.ID = 1;
+            g.ID = 2;
             g.Name = "Staff1";
             g.Desc = "Staff Group1";
             gr.TheGroup = g;
@@ -90,38 +110,10 @@ namespace UserAccountGroupManagement.Test
             Assert.AreEqual(true, result);
         }
 
-        [TestMethod]
-        public void TestDeleteGroupInUse()
-        {
-            bool result = false;
-
-            GroupReopistory gr = new GroupReopistory();
-            Group g = new Group();
-            g.ID = 4;
-            gr.TheGroup = g;
-
-            result = gr.DeleteGroup();
-
-            Assert.AreEqual(false, result);
-        }
+       
 
         [TestMethod]
-        public void TestDeleteGroupNotInUse()
-        {
-            bool result = false;
-
-            GroupReopistory gr = new GroupReopistory();
-            Group g = new Group();
-            g.ID = 5;
-            gr.TheGroup = g;
-
-            result = gr.DeleteGroup();
-
-            Assert.AreEqual(true, result);
-        }
-
-        [TestMethod]
-        public void TestListGroup()
+        public void Test_1006_ListGroup()
         {
             bool result = false;
 

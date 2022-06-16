@@ -8,6 +8,8 @@ using UserAccountGroupManagement.DAL;
 using UserAccountGroupManagement.Error;
 using UserAccountGroupManagement.Model;
 using UserAccountGroupManagement.Util;
+using System.Data.Linq;
+
 
 namespace UserAccountGroupManagement.Repository
 {
@@ -93,9 +95,40 @@ namespace UserAccountGroupManagement.Repository
             return result;
         }
 
+        //---
+        public bool DeleteUser()
+        {
+            bool result = false;
+            Errors = new List<int>();
+            UserDBDataContext dc = null;
+            int? error_num = 0;
+
+            try
+            {
+                if (ValidateBeforeDelete())
+                {
+                    dc = new UserDBDataContext(Common.ConnectionStr);
+                    dc.st_user_delete(TheUser.ID, TheUserAccount.ID, ref error_num);
+
+                    if (error_num == 0)
+                    {
+                        result = true;
+                    }
+                    else
+                        Errors.Add(error_num.Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                Errors.Add((int)CommonError.UnexpectError);
+            }
+
+            return result;
+        }
+
         public bool ValidateBeforeInsertUpdateUser()
         {
-            bool result = true;
+            bool result = false;
 
             if (string.IsNullOrEmpty(TheUser.FirstName))
             {
@@ -123,11 +156,16 @@ namespace UserAccountGroupManagement.Repository
                 Errors.Add((int)UserError.PasswordNullOrEmptyError);
             }
 
-
-            if(TheGroups == null || (TheGroups != null && TheGroups.Count == 0))
+            if (!IsPasswordStrong(TheUserAccount.Password))
             {
-                Errors.Add((int)UserError.UserGroupEmptyError);
+                Errors.Add((int)UserError.PasswordNotStrongError);
             }
+
+
+            //if(TheGroups == null || (TheGroups != null && TheGroups.Count == 0))
+            //{
+            //    Errors.Add((int)UserError.UserGroupEmptyError);
+            //}
 
             if (Errors.Count == 0)
                 result = true;
@@ -135,7 +173,84 @@ namespace UserAccountGroupManagement.Repository
             return result;
         }
 
+        public bool ValidateBeforeDelete()
+        {
+            bool result = true;
+
+            if (TheUser.ID <=0)
+            {
+                Errors.Add((int)UserError.InvalidUserIDError);
+            }
+
+            if (TheUserAccount.ID <=0 )
+            {
+                Errors.Add((int)UserError.InvalidUserAccountIDError);
+            }
 
 
+            if (Errors.Count == 0)
+                result = true;
+
+            return result;
+        }
+
+        public List<UserSearchResult> UserList()
+        {
+            UserDBDataContext dc = null;
+            List<UserSearchResult> lsResult = null;
+            List<st_userList_selectResult> lsTmp = null;
+            ISingleResult<st_userList_selectResult> sp = null;
+            try
+            {
+                dc = new UserDBDataContext(Common.ConnectionStr);
+                sp = dc.st_userList_select();
+                lsTmp = sp.ToList();
+                lsResult = ConvertUserList(lsTmp);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return lsResult;
+        }
+
+        List<UserSearchResult> ConvertUserList(List<st_userList_selectResult> lsTmp)
+        {
+            List<UserSearchResult> lsResult = null;
+            UserSearchResult userSearchResult = null;
+
+            if (lsTmp != null && lsTmp.Count > 0)
+            {
+                lsResult = new List<UserSearchResult>();
+
+
+                foreach (st_userList_selectResult c in lsTmp)
+                {
+                    userSearchResult = new UserSearchResult(c.id, c.first_name, c.middle_name, c.last_name, c.dob, c.login_name, c.created, c.status.Value);
+                    lsResult.Add(userSearchResult);
+                }
+            }
+
+            return lsResult;
+        }
+
+        /// <summary>
+        /// must contains one digit from 0-9
+        /// must contains one lowercase characters
+        /// must contains one uppercase characters
+        /// must contains one special symbols in the list "@#$%"
+        /// match anything with previous condition checking
+        /// length at least 8 characters and maximum of 40
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool IsPasswordStrong(string password)
+
+        {
+            bool result = false;
+            result = System.Text.RegularExpressions.Regex.IsMatch(password, @"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,40})");
+
+            return result;
+        }
     }
 }
