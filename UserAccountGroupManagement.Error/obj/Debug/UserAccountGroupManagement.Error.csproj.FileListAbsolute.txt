@@ -3,3 +3,4 @@ C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBack
 C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Error\obj\Debug\UserAccountGroupManagement.Error.csproj.CoreCompileInputs.cache
 C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Error\obj\Debug\UserAccountGroupManagement.Error.dll
 C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Error\obj\Debug\UserAccountGroupManagement.Error.pdb
+C:\Work\Vinhlan\Core Practice\TechnicalTest\Source\CorePracticeTechnicalTestBackend\UserAccountGroupManagement.Error\obj\Debug\UserAccountGroupManagement.Error.csprojAssemblyReference.cache

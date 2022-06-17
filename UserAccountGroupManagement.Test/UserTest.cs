@@ -33,7 +33,30 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void Test_2001_InsertAnotherUser()
+        public void Test_2001_InsertUserUserNameExist()
+        {
+            bool result = false;
+            UserRepository userRep = new UserRepository();
+            User user = new User(0, "Linda", "", "Smith", new DateTime(1996, 1, 1));
+            UserAccount userAccount = new UserAccount(0, "linda.smith@gmail.com", "@Passord1", "PasswordSalt", 'A');
+
+            List<Group> theGroups = new List<Group>();
+
+            Group theGroup = new Group(1, "Administrator", "");
+            theGroups.Add(theGroup);
+            theGroup = new Group(2, "Staff", "");
+            theGroups.Add(theGroup);
+
+            userRep.TheUser = user;
+            userRep.TheUserAccount = userAccount;
+            userRep.TheGroups = theGroups;
+            result = userRep.InsertUser();
+
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void Test_2002_InsertAnotherUser()
         {
             bool result = false;
             UserRepository userRep = new UserRepository();
@@ -56,7 +79,7 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void Test_2002_UpdatetUser()
+        public void Test_2003_UpdatetUser()
         {
             bool result = false;
             UserRepository userRep = new UserRepository();
@@ -79,7 +102,7 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void Test_2002_UpdatetUserGroupsHasChange()
+        public void Test_2004_UpdatetUserGroupsHasChange()
         {
             bool result = false;
             UserRepository userRep = new UserRepository();
@@ -102,7 +125,7 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void Test_2003_UpdatetUserClearGroup()
+        public void Test_2005_UpdatetUserClearGroup()
         {
             bool result = false;
             UserRepository userRep = new UserRepository();
@@ -126,7 +149,7 @@ namespace UserAccountGroupManagement.Test
 
 
         [TestMethod]
-        public void Test_2004_UserList()
+        public void Test_2006_UserList()
         {
             bool result = false;
 
@@ -143,7 +166,7 @@ namespace UserAccountGroupManagement.Test
 
       
         [TestMethod]
-        public void Test_2005_DeleteGroupInUse()
+        public void Test_2007_DeleteGroupInUse()
         {
             bool result = false;
 
@@ -158,7 +181,7 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void Test_2007_DeleteGroupNotInUse()
+        public void Test_2008_DeleteGroupNotInUse()
         {
             bool result = false;
 
@@ -173,7 +196,7 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void Test_2008_DeleteUser()
+        public void Test_2009_DeleteUser()
         {
             bool result = false;
             UserRepository userRep = new UserRepository();
@@ -189,7 +212,7 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void Test_2009_PasswordIsStrong()
+        public void Test_2010_PasswordIsStrong()
         {
             bool result = false;
             UserRepository userRep = new UserRepository();
@@ -201,7 +224,7 @@ namespace UserAccountGroupManagement.Test
         }
 
         [TestMethod]
-        public void Test_2010_PasswordIsNotStrong()
+        public void Test_2011_PasswordIsNotStrong()
         {
             bool result = false;
             UserRepository userRep = new UserRepository();
