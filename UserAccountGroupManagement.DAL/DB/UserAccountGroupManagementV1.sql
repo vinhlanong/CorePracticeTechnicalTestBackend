@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [UserAccountGroupManagementV1]    Script Date: 16/06/2022 4:44:46 PM ******/
+/****** Object:  Database [UserAccountGroupManagementV1]    Script Date: 17/06/2022 10:46:43 AM ******/
 CREATE DATABASE [UserAccountGroupManagementV1]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,12 +80,12 @@ ALTER DATABASE [UserAccountGroupManagementV1] SET QUERY_STORE = OFF
 GO
 USE [UserAccountGroupManagementV1]
 GO
-/****** Object:  User [dev]    Script Date: 16/06/2022 4:44:46 PM ******/
+/****** Object:  User [dev]    Script Date: 17/06/2022 10:46:43 AM ******/
 CREATE USER [dev] FOR LOGIN [dev] WITH DEFAULT_SCHEMA=[dbo]
 GO
 ALTER ROLE [db_owner] ADD MEMBER [dev]
 GO
-/****** Object:  Table [dbo].[usr_account]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  Table [dbo].[usr_account]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -104,7 +104,7 @@ CREATE TABLE [dbo].[usr_account](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[usr_group]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  Table [dbo].[usr_group]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -121,7 +121,7 @@ CREATE TABLE [dbo].[usr_group](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[usr_user]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  Table [dbo].[usr_user]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -141,7 +141,7 @@ CREATE TABLE [dbo].[usr_user](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[usr_user_group_link]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  Table [dbo].[usr_user_group_link]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -159,7 +159,7 @@ CREATE TABLE [dbo].[usr_user_group_link](
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_usr_account]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  Index [IX_usr_account]    Script Date: 17/06/2022 10:46:43 AM ******/
 CREATE UNIQUE NONCLUSTERED INDEX [IX_usr_account] ON [dbo].[usr_account]
 (
 	[login_name] ASC
@@ -167,7 +167,7 @@ CREATE UNIQUE NONCLUSTERED INDEX [IX_usr_account] ON [dbo].[usr_account]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_usr_group]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  Index [IX_usr_group]    Script Date: 17/06/2022 10:46:43 AM ******/
 CREATE UNIQUE NONCLUSTERED INDEX [IX_usr_group] ON [dbo].[usr_group]
 (
 	[group_name] ASC
@@ -175,7 +175,7 @@ CREATE UNIQUE NONCLUSTERED INDEX [IX_usr_group] ON [dbo].[usr_group]
 GO
 ALTER TABLE [dbo].[usr_account] ADD  CONSTRAINT [DF_usr_account_status]  DEFAULT ('A') FOR [status]
 GO
-/****** Object:  StoredProcedure [dbo].[st_HasUserGoupsChanged_select]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_HasUserGoupsChanged_select]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -241,7 +241,7 @@ BEGIN
     RETURN @result;  
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_user_delete]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_user_delete]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -326,7 +326,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_user_insert]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_user_insert]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -457,7 +457,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_user_update]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_user_update]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -556,7 +556,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroup_delete]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroup_delete]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -606,7 +606,7 @@ BEGIN TRANSACTION
 	END CATCH	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroup_delsert]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroup_delsert]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -675,7 +675,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroup_insert]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroup_insert]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -736,7 +736,7 @@ BEGIN TRANSACTION
 	END CATCH	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroup_update]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroup_update]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -788,7 +788,7 @@ BEGIN TRANSACTION
 	END CATCH	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroupAll_select]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroupAll_select]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -806,7 +806,7 @@ BEGIN
 	ORDER BY group_name
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroups_insert]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroups_insert]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -861,7 +861,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userList_select]    Script Date: 16/06/2022 4:44:47 PM ******/
+/****** Object:  StoredProcedure [dbo].[st_userList_select]    Script Date: 17/06/2022 10:46:43 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
