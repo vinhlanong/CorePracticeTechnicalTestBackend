@@ -1,91 +1,91 @@
 USE [master]
 GO
-/****** Object:  Database [UserAccountGroupManagementV1]    Script Date: 17/06/2022 10:46:43 AM ******/
-CREATE DATABASE [UserAccountGroupManagementV1]
+/****** Object:  Database [UserAccountGroupManagement]    Script Date: 17/06/2022 10:51:08 AM ******/
+CREATE DATABASE [UserAccountGroupManagement]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'UserAccountGroupManagementV1', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\UserAccountGroupManagementV1.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'UserAccountGroupManagement', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\UserAccountGroupManagement.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'UserAccountGroupManagementV1_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\UserAccountGroupManagementV1_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'UserAccountGroupManagement_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\UserAccountGroupManagement_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
  WITH CATALOG_COLLATION = DATABASE_DEFAULT
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET COMPATIBILITY_LEVEL = 150
+ALTER DATABASE [UserAccountGroupManagement] SET COMPATIBILITY_LEVEL = 150
 GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 begin
-EXEC [UserAccountGroupManagementV1].[dbo].[sp_fulltext_database] @action = 'enable'
+EXEC [UserAccountGroupManagement].[dbo].[sp_fulltext_database] @action = 'enable'
 end
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET ANSI_NULL_DEFAULT OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET ANSI_NULL_DEFAULT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET ANSI_NULLS OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET ANSI_NULLS OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET ANSI_PADDING OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET ANSI_PADDING OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET ANSI_WARNINGS OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET ANSI_WARNINGS OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET ARITHABORT OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET ARITHABORT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET AUTO_CLOSE OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET AUTO_CLOSE OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET AUTO_SHRINK OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET AUTO_SHRINK OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET AUTO_UPDATE_STATISTICS ON 
+ALTER DATABASE [UserAccountGroupManagement] SET AUTO_UPDATE_STATISTICS ON 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET CURSOR_CLOSE_ON_COMMIT OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET CURSOR_CLOSE_ON_COMMIT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET CURSOR_DEFAULT  GLOBAL 
+ALTER DATABASE [UserAccountGroupManagement] SET CURSOR_DEFAULT  GLOBAL 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET CONCAT_NULL_YIELDS_NULL OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET CONCAT_NULL_YIELDS_NULL OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET NUMERIC_ROUNDABORT OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET NUMERIC_ROUNDABORT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET QUOTED_IDENTIFIER OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET QUOTED_IDENTIFIER OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET RECURSIVE_TRIGGERS OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET RECURSIVE_TRIGGERS OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET  DISABLE_BROKER 
+ALTER DATABASE [UserAccountGroupManagement] SET  DISABLE_BROKER 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET DATE_CORRELATION_OPTIMIZATION OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET DATE_CORRELATION_OPTIMIZATION OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET TRUSTWORTHY OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET TRUSTWORTHY OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET ALLOW_SNAPSHOT_ISOLATION OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET PARAMETERIZATION SIMPLE 
+ALTER DATABASE [UserAccountGroupManagement] SET PARAMETERIZATION SIMPLE 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET READ_COMMITTED_SNAPSHOT OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET READ_COMMITTED_SNAPSHOT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET HONOR_BROKER_PRIORITY OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET HONOR_BROKER_PRIORITY OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET RECOVERY FULL 
+ALTER DATABASE [UserAccountGroupManagement] SET RECOVERY FULL 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET  MULTI_USER 
+ALTER DATABASE [UserAccountGroupManagement] SET  MULTI_USER 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET PAGE_VERIFY CHECKSUM  
+ALTER DATABASE [UserAccountGroupManagement] SET PAGE_VERIFY CHECKSUM  
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET DB_CHAINING OFF 
+ALTER DATABASE [UserAccountGroupManagement] SET DB_CHAINING OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+ALTER DATABASE [UserAccountGroupManagement] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+ALTER DATABASE [UserAccountGroupManagement] SET TARGET_RECOVERY_TIME = 60 SECONDS 
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET DELAYED_DURABILITY = DISABLED 
+ALTER DATABASE [UserAccountGroupManagement] SET DELAYED_DURABILITY = DISABLED 
 GO
-EXEC sys.sp_db_vardecimal_storage_format N'UserAccountGroupManagementV1', N'ON'
+EXEC sys.sp_db_vardecimal_storage_format N'UserAccountGroupManagement', N'ON'
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET QUERY_STORE = OFF
+ALTER DATABASE [UserAccountGroupManagement] SET QUERY_STORE = OFF
 GO
-USE [UserAccountGroupManagementV1]
+USE [UserAccountGroupManagement]
 GO
-/****** Object:  User [dev]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  User [dev]    Script Date: 17/06/2022 10:51:08 AM ******/
 CREATE USER [dev] FOR LOGIN [dev] WITH DEFAULT_SCHEMA=[dbo]
 GO
 ALTER ROLE [db_owner] ADD MEMBER [dev]
 GO
-/****** Object:  Table [dbo].[usr_account]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  Table [dbo].[usr_account]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -104,7 +104,7 @@ CREATE TABLE [dbo].[usr_account](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[usr_group]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  Table [dbo].[usr_group]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -121,7 +121,7 @@ CREATE TABLE [dbo].[usr_group](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[usr_user]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  Table [dbo].[usr_user]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -141,7 +141,7 @@ CREATE TABLE [dbo].[usr_user](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[usr_user_group_link]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  Table [dbo].[usr_user_group_link]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -159,7 +159,7 @@ CREATE TABLE [dbo].[usr_user_group_link](
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_usr_account]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  Index [IX_usr_account]    Script Date: 17/06/2022 10:51:08 AM ******/
 CREATE UNIQUE NONCLUSTERED INDEX [IX_usr_account] ON [dbo].[usr_account]
 (
 	[login_name] ASC
@@ -167,7 +167,7 @@ CREATE UNIQUE NONCLUSTERED INDEX [IX_usr_account] ON [dbo].[usr_account]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_usr_group]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  Index [IX_usr_group]    Script Date: 17/06/2022 10:51:08 AM ******/
 CREATE UNIQUE NONCLUSTERED INDEX [IX_usr_group] ON [dbo].[usr_group]
 (
 	[group_name] ASC
@@ -175,7 +175,7 @@ CREATE UNIQUE NONCLUSTERED INDEX [IX_usr_group] ON [dbo].[usr_group]
 GO
 ALTER TABLE [dbo].[usr_account] ADD  CONSTRAINT [DF_usr_account_status]  DEFAULT ('A') FOR [status]
 GO
-/****** Object:  StoredProcedure [dbo].[st_HasUserGoupsChanged_select]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_HasUserGoupsChanged_select]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -241,7 +241,7 @@ BEGIN
     RETURN @result;  
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_user_delete]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_user_delete]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -326,7 +326,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_user_insert]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_user_insert]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -457,7 +457,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_user_update]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_user_update]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -556,7 +556,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroup_delete]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroup_delete]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -606,7 +606,7 @@ BEGIN TRANSACTION
 	END CATCH	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroup_delsert]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroup_delsert]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -675,7 +675,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroup_insert]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroup_insert]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -736,7 +736,7 @@ BEGIN TRANSACTION
 	END CATCH	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroup_update]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroup_update]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -788,7 +788,7 @@ BEGIN TRANSACTION
 	END CATCH	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroupAll_select]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroupAll_select]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -806,7 +806,7 @@ BEGIN
 	ORDER BY group_name
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userGroups_insert]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_userGroups_insert]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -861,7 +861,7 @@ BEGIN
 	
 END
 GO
-/****** Object:  StoredProcedure [dbo].[st_userList_select]    Script Date: 17/06/2022 10:46:43 AM ******/
+/****** Object:  StoredProcedure [dbo].[st_userList_select]    Script Date: 17/06/2022 10:51:08 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -890,5 +890,5 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'must be a vali
 GO
 USE [master]
 GO
-ALTER DATABASE [UserAccountGroupManagementV1] SET  READ_WRITE 
+ALTER DATABASE [UserAccountGroupManagement] SET  READ_WRITE 
 GO
