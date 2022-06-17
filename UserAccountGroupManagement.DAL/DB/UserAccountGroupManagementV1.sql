@@ -1,84 +1,84 @@
 USE [master]
 GO
-/****** Object:  Database [UserAccountGroupManagement]    Script Date: 17/06/2022 10:51:08 AM ******/
-CREATE DATABASE [UserAccountGroupManagement]
+/****** Object:  Database [UserAccountGroupManagementV1]    Script Date: 17/06/2022 10:51:08 AM ******/
+CREATE DATABASE [UserAccountGroupManagementV1]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'UserAccountGroupManagement', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\UserAccountGroupManagement.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'UserAccountGroupManagementV1', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\UserAccountGroupManagementV1.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'UserAccountGroupManagement_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\UserAccountGroupManagement_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'UserAccountGroupManagementV1_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\UserAccountGroupManagementV1_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
  WITH CATALOG_COLLATION = DATABASE_DEFAULT
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET COMPATIBILITY_LEVEL = 150
+ALTER DATABASE [UserAccountGroupManagementV1] SET COMPATIBILITY_LEVEL = 150
 GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 begin
-EXEC [UserAccountGroupManagement].[dbo].[sp_fulltext_database] @action = 'enable'
+EXEC [UserAccountGroupManagementV1].[dbo].[sp_fulltext_database] @action = 'enable'
 end
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET ANSI_NULL_DEFAULT OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET ANSI_NULL_DEFAULT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET ANSI_NULLS OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET ANSI_NULLS OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET ANSI_PADDING OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET ANSI_PADDING OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET ANSI_WARNINGS OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET ANSI_WARNINGS OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET ARITHABORT OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET ARITHABORT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET AUTO_CLOSE OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET AUTO_CLOSE OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET AUTO_SHRINK OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET AUTO_SHRINK OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET AUTO_UPDATE_STATISTICS ON 
+ALTER DATABASE [UserAccountGroupManagementV1] SET AUTO_UPDATE_STATISTICS ON 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET CURSOR_CLOSE_ON_COMMIT OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET CURSOR_CLOSE_ON_COMMIT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET CURSOR_DEFAULT  GLOBAL 
+ALTER DATABASE [UserAccountGroupManagementV1] SET CURSOR_DEFAULT  GLOBAL 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET CONCAT_NULL_YIELDS_NULL OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET CONCAT_NULL_YIELDS_NULL OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET NUMERIC_ROUNDABORT OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET NUMERIC_ROUNDABORT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET QUOTED_IDENTIFIER OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET QUOTED_IDENTIFIER OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET RECURSIVE_TRIGGERS OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET RECURSIVE_TRIGGERS OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET  DISABLE_BROKER 
+ALTER DATABASE [UserAccountGroupManagementV1] SET  DISABLE_BROKER 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET DATE_CORRELATION_OPTIMIZATION OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET DATE_CORRELATION_OPTIMIZATION OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET TRUSTWORTHY OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET TRUSTWORTHY OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET ALLOW_SNAPSHOT_ISOLATION OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET PARAMETERIZATION SIMPLE 
+ALTER DATABASE [UserAccountGroupManagementV1] SET PARAMETERIZATION SIMPLE 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET READ_COMMITTED_SNAPSHOT OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET READ_COMMITTED_SNAPSHOT OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET HONOR_BROKER_PRIORITY OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET HONOR_BROKER_PRIORITY OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET RECOVERY FULL 
+ALTER DATABASE [UserAccountGroupManagementV1] SET RECOVERY FULL 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET  MULTI_USER 
+ALTER DATABASE [UserAccountGroupManagementV1] SET  MULTI_USER 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET PAGE_VERIFY CHECKSUM  
+ALTER DATABASE [UserAccountGroupManagementV1] SET PAGE_VERIFY CHECKSUM  
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET DB_CHAINING OFF 
+ALTER DATABASE [UserAccountGroupManagementV1] SET DB_CHAINING OFF 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+ALTER DATABASE [UserAccountGroupManagementV1] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+ALTER DATABASE [UserAccountGroupManagementV1] SET TARGET_RECOVERY_TIME = 60 SECONDS 
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET DELAYED_DURABILITY = DISABLED 
+ALTER DATABASE [UserAccountGroupManagementV1] SET DELAYED_DURABILITY = DISABLED 
 GO
-EXEC sys.sp_db_vardecimal_storage_format N'UserAccountGroupManagement', N'ON'
+EXEC sys.sp_db_vardecimal_storage_format N'UserAccountGroupManagementV1', N'ON'
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET QUERY_STORE = OFF
+ALTER DATABASE [UserAccountGroupManagementV1] SET QUERY_STORE = OFF
 GO
-USE [UserAccountGroupManagement]
+USE [UserAccountGroupManagementV1]
 GO
 /****** Object:  User [dev]    Script Date: 17/06/2022 10:51:08 AM ******/
 CREATE USER [dev] FOR LOGIN [dev] WITH DEFAULT_SCHEMA=[dbo]
@@ -890,5 +890,5 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'must be a vali
 GO
 USE [master]
 GO
-ALTER DATABASE [UserAccountGroupManagement] SET  READ_WRITE 
+ALTER DATABASE [UserAccountGroupManagementV1] SET  READ_WRITE 
 GO
