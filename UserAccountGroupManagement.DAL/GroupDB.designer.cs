@@ -22,7 +22,7 @@ namespace UserAccountGroupManagement.DAL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="UserAccountGroupManagement")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="UserAccountGroupManagementV1")]
 	public partial class GroupDBDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,7 +33,7 @@ namespace UserAccountGroupManagement.DAL
     #endregion
 		
 		public GroupDBDataContext() : 
-				base(global::UserAccountGroupManagement.DAL.Properties.Settings.Default.UserAccountGroupManagementConnectionString, mappingSource)
+				base(global::UserAccountGroupManagement.DAL.Properties.Settings.Default.UserAccountGroupManagementV1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -92,6 +92,20 @@ namespace UserAccountGroupManagement.DAL
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, error_num);
 			error_num = ((System.Nullable<int>)(result.GetParameterValue(1)));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_userGroupByID_select")]
+		public ISingleResult<st_userGroupByID_selectResult> st_userGroupByID_select([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallInt")] System.Nullable<short> groupID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), groupID);
+			return ((ISingleResult<st_userGroupByID_selectResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_userGroupsByUserID_select")]
+		public ISingleResult<st_userGroupsByUserID_selectResult> st_userGroupsByUserID_select([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<st_userGroupsByUserID_selectResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -188,6 +202,184 @@ namespace UserAccountGroupManagement.DAL
 				if ((this._modified != value))
 				{
 					this._modified = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_userGroupByID_selectResult
+	{
+		
+		private short _id;
+		
+		private string _group_name;
+		
+		private string _description;
+		
+		private System.DateTime _created;
+		
+		private System.Nullable<System.DateTime> _modified;
+		
+		public st_userGroupByID_selectResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="SmallInt NOT NULL")]
+		public short id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_group_name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string group_name
+		{
+			get
+			{
+				return this._group_name;
+			}
+			set
+			{
+				if ((this._group_name != value))
+				{
+					this._group_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="VarChar(200)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this._description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created", DbType="DateTime NOT NULL")]
+		public System.DateTime created
+		{
+			get
+			{
+				return this._created;
+			}
+			set
+			{
+				if ((this._created != value))
+				{
+					this._created = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modified", DbType="DateTime")]
+		public System.Nullable<System.DateTime> modified
+		{
+			get
+			{
+				return this._modified;
+			}
+			set
+			{
+				if ((this._modified != value))
+				{
+					this._modified = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_userGroupsByUserID_selectResult
+	{
+		
+		private short _id;
+		
+		private string _group_name;
+		
+		private string _description;
+		
+		private System.DateTime _created;
+		
+		public st_userGroupsByUserID_selectResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="SmallInt NOT NULL")]
+		public short id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_group_name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string group_name
+		{
+			get
+			{
+				return this._group_name;
+			}
+			set
+			{
+				if ((this._group_name != value))
+				{
+					this._group_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="VarChar(200)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this._description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created", DbType="DateTime NOT NULL")]
+		public System.DateTime created
+		{
+			get
+			{
+				return this._created;
+			}
+			set
+			{
+				if ((this._created != value))
+				{
+					this._created = value;
 				}
 			}
 		}

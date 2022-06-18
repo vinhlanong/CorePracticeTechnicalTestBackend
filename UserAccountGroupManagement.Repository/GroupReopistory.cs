@@ -155,6 +155,31 @@ namespace UserAccountGroupManagement.Repository
         }
 
 
+        public Group GroupByID(short groupID)
+        {
+            GroupDBDataContext dc = null;
+            List<st_userGroupByID_selectResult> lsTmp = null;
+            ISingleResult<st_userGroupByID_selectResult> sp = null;
+            st_userGroupByID_selectResult userGroup = null;
+            Group result = null;
+            try
+            {
+                dc = new GroupDBDataContext(Common.ConnectionStr);
+                sp = dc.st_userGroupByID_select(groupID);
+                lsTmp = sp.ToList();
+                if(lsTmp != null && lsTmp.Count >= 0)
+                {
+                    userGroup = lsTmp[0];
+                    result = new Group(userGroup.id, userGroup.group_name, userGroup.description);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result;
+        }
         public List<Group> GroupList()
         {
             GroupDBDataContext dc = null;
@@ -186,6 +211,46 @@ namespace UserAccountGroupManagement.Repository
 
 
                 foreach (st_userGroupAll_selectResult c in lsTmp)
+                {
+                    group = new Group(c.id, c.group_name, c.description);
+                    lsResult.Add(group);
+                }
+            }
+
+            return lsResult;
+        }
+
+        public List<Group> UserGroupsByUserID(long userID)
+        {
+            GroupDBDataContext dc = null;
+            List<Group> lsResult = null;
+            List<st_userGroupsByUserID_selectResult> lsTmp = null;
+            ISingleResult<st_userGroupsByUserID_selectResult> sp = null;
+            try
+            {
+                dc = new GroupDBDataContext(Common.ConnectionStr);
+                sp = dc.st_userGroupsByUserID_select(userID);
+                lsTmp = sp.ToList();
+                lsResult = ConvertToUserGroup(lsTmp);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return lsResult;
+        }
+
+        List<Group> ConvertToUserGroup(List<st_userGroupsByUserID_selectResult> lsTmp)
+        {
+            List<Group> lsResult = null;
+            Group group = null;
+
+            if (lsTmp != null && lsTmp.Count > 0)
+            {
+                lsResult = new List<Group>();
+
+
+                foreach (st_userGroupsByUserID_selectResult c in lsTmp)
                 {
                     group = new Group(c.id, c.group_name, c.description);
                     lsResult.Add(group);

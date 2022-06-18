@@ -95,7 +95,6 @@ namespace UserAccountGroupManagement.Repository
             return result;
         }
 
-        //---
         public bool DeleteUser()
         {
             bool result = false;
@@ -232,6 +231,39 @@ namespace UserAccountGroupManagement.Repository
             }
 
             return lsResult;
+        }
+
+        public bool UserByID(long userID)
+        {
+            bool result = false;
+            UserDBDataContext dc = null;
+            List<st_userByID_selectResult> lsTmp = null;
+            ISingleResult<st_userByID_selectResult> sp = null;
+
+            st_userByID_selectResult tmpUser = null;
+            GroupReopistory gr = null;
+            try
+            {
+                dc = new UserDBDataContext(Common.ConnectionStr);
+                sp = dc.st_userByID_select(userID);
+                lsTmp = sp.ToList();
+
+                if(lsTmp != null && lsTmp.Count > 0)
+                {
+                    tmpUser = lsTmp[0];
+                    TheUser = new User(tmpUser.id, tmpUser.first_name, tmpUser.middle_name, tmpUser.last_name, tmpUser.dob);
+                    TheUserAccount = new UserAccount(tmpUser.account_fk, tmpUser.login_name, tmpUser.password, tmpUser.password_salt, tmpUser.status.Value);
+                    gr = new GroupReopistory();
+                    TheGroups = gr.UserGroupsByUserID(userID);
+                    result = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result;
         }
 
         /// <summary>

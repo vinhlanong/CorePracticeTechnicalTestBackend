@@ -22,7 +22,7 @@ namespace UserAccountGroupManagement.DAL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="UserAccountGroupManagement")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="UserAccountGroupManagementV1")]
 	public partial class UserDBDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,7 +33,7 @@ namespace UserAccountGroupManagement.DAL
     #endregion
 		
 		public UserDBDataContext() : 
-				base(global::UserAccountGroupManagement.DAL.Properties.Settings.Default.UserAccountGroupManagementConnectionString1, mappingSource)
+				base(global::UserAccountGroupManagement.DAL.Properties.Settings.Default.UserAccountGroupManagementV1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -93,6 +93,13 @@ namespace UserAccountGroupManagement.DAL
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user_id, account_id, error_num);
 			error_num = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_userByID_select")]
+		public ISingleResult<st_userByID_selectResult> st_userByID_select([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="BigInt")] System.Nullable<long> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<st_userByID_selectResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -213,6 +220,212 @@ namespace UserAccountGroupManagement.DAL
 				if ((this._login_name != value))
 				{
 					this._login_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created", DbType="DateTime NOT NULL")]
+		public System.DateTime created
+		{
+			get
+			{
+				return this._created;
+			}
+			set
+			{
+				if ((this._created != value))
+				{
+					this._created = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_account_fk", DbType="BigInt NOT NULL")]
+		public long account_fk
+		{
+			get
+			{
+				return this._account_fk;
+			}
+			set
+			{
+				if ((this._account_fk != value))
+				{
+					this._account_fk = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Char(1)")]
+		public System.Nullable<char> status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_userByID_selectResult
+	{
+		
+		private long _id;
+		
+		private string _first_name;
+		
+		private string _middle_name;
+		
+		private string _last_name;
+		
+		private System.DateTime _dob;
+		
+		private string _login_name;
+		
+		private string _password;
+		
+		private string _password_salt;
+		
+		private System.DateTime _created;
+		
+		private long _account_fk;
+		
+		private System.Nullable<char> _status;
+		
+		public st_userByID_selectResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="BigInt NOT NULL")]
+		public long id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_first_name", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string first_name
+		{
+			get
+			{
+				return this._first_name;
+			}
+			set
+			{
+				if ((this._first_name != value))
+				{
+					this._first_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_middle_name", DbType="VarChar(80)")]
+		public string middle_name
+		{
+			get
+			{
+				return this._middle_name;
+			}
+			set
+			{
+				if ((this._middle_name != value))
+				{
+					this._middle_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_last_name", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string last_name
+		{
+			get
+			{
+				return this._last_name;
+			}
+			set
+			{
+				if ((this._last_name != value))
+				{
+					this._last_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dob", DbType="Date NOT NULL")]
+		public System.DateTime dob
+		{
+			get
+			{
+				return this._dob;
+			}
+			set
+			{
+				if ((this._dob != value))
+				{
+					this._dob = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_login_name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string login_name
+		{
+			get
+			{
+				return this._login_name;
+			}
+			set
+			{
+				if ((this._login_name != value))
+				{
+					this._login_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this._password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password_salt", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string password_salt
+		{
+			get
+			{
+				return this._password_salt;
+			}
+			set
+			{
+				if ((this._password_salt != value))
+				{
+					this._password_salt = value;
 				}
 			}
 		}

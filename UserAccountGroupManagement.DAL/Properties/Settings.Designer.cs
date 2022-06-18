@@ -44,5 +44,16 @@ namespace UserAccountGroupManagement.DAL.Properties {
                 return ((string)(this["UserAccountGroupManagementConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=dev2;Initial Catalog=UserAccountGroupManagementV1;Persist Security In" +
+            "fo=True;User ID=dev")]
+        public string UserAccountGroupManagementV1ConnectionString {
+            get {
+                return ((string)(this["UserAccountGroupManagementV1ConnectionString"]));
+            }
+        }
     }
 }

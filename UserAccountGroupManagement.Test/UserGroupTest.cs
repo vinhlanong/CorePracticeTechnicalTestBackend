@@ -127,5 +127,43 @@ namespace UserAccountGroupManagement.Test
 
             Assert.AreEqual(true, result);
         }
+
+        [TestMethod]
+        public void Test_1007_GroupByID()
+        {
+            bool result = false;
+
+            GroupReopistory gr = new GroupReopistory();
+            short groupID = 1;
+
+            Group group = gr.GroupByID(groupID);
+            if(group != null)
+            {
+                result = true;
+            }
+
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void Test_1007_GroupByIDNotExist()
+        {
+            bool result = false;
+
+            GroupReopistory gr = new GroupReopistory();
+            short groupID = 4;
+
+            Group group = gr.GroupByID(groupID);
+            if (group != null)
+            {
+                result = true;
+            }
+
+            Assert.AreEqual(true, result);
+        }
+
+
+
+
     }
 }

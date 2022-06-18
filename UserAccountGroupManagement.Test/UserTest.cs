@@ -235,5 +235,45 @@ namespace UserAccountGroupManagement.Test
             Assert.AreEqual(true, result);
         }
 
+        [TestMethod]
+        public void Test_2012_UserGroupsByUserID()
+        {
+            bool result = false;
+
+            GroupReopistory gr = new GroupReopistory();
+            long userID = 2;
+
+            List<Group> groups = gr.UserGroupsByUserID(userID);
+            if (groups != null && groups.Count > 0)
+            {
+                result = true;
+            }
+
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void Test_2013_UserByID()
+        {
+            bool result = false;
+
+            UserRepository ur = new UserRepository();
+            long userID = 2;
+            result = ur.UserByID(userID);
+
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void Test_2013_UserByIDNotExist()
+        {
+            bool result = false;
+
+            UserRepository ur = new UserRepository();
+            long userID = 1000;
+            result = ur.UserByID(userID);
+
+            Assert.AreEqual(true, result);
+        }
     }
 }
